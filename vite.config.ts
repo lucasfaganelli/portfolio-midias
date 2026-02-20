@@ -4,17 +4,21 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
+  // IMPORTANTE para GitHub Pages
   base: "/portfolio-midias/",
 
+  plugins: [
+    react(),
+    componentTagger(),
+  ],
+
   server: {
-    host: "::",
+    host: true,
     port: 8080,
     hmr: {
       overlay: false,
     },
   },
-
-  plugins: [react(), componentTagger()].filter(Boolean),
 
   resolve: {
     alias: {
