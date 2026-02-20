@@ -4,7 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", // ⭐ IMPORTANTE PARA GITHUB PAGES
+  base: "/portfolio-midias/", // 👈 ESSENCIAL PARA GITHUB PAGES
+
   server: {
     host: "::",
     port: 8080,
@@ -12,7 +13,9 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
